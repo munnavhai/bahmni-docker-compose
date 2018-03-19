@@ -33,7 +33,7 @@ vim .env
 
 From the development machine (nixos-dev in Ixelles) we set up a reverse tunnel to access the Docker registry:
 ```
-ssh -R 5000:localhost:5000 maadi-emr-a
+ssh -N -R 5000:localhost:5000 maadi-emr-a
 ```
 
 ## On the Bahmni server
