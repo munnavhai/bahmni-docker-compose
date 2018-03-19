@@ -1,0 +1,50 @@
+version: '3.3'
+
+services:
+
+  maadi:
+    image: localhost:5000/maadi:0.1
+    build:
+      context: bahmni
+      dockerfile: Dockerfile
+      args:
+        - impl_file_suffix=maadi
+    hostname: maadi-emr-a
+    container_name: maadi-emr-a
+    tmpfs: /tmp
+    env_file:
+      - .env
+    command: "bash -e /start.sh $mode $setup_replication"
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      - "3306:3306" # Mysql repl
+      - "5432:5432" # PostgreSQL repl
+    volumes:
+      - type: volume
+        source: maadi_bahmni_backup
+        target: /bahmni_backup/backups
+      - type: volume
+        source: maadi_mysql_data
+        target: /var/lib/mysql
+      - type: volume
+        source: maadi_pgsql_data
+        target: /var/lib/pgsql
+      - type: volume
+        source: maadi_openmrs_lucene
+        target: /opt/openmrs/lucene
+      - type: volume
+        source: maadi_bahmni_home
+        target: /home/bahmni
+      - type: bind
+        source: $bahmni_enc_file_path
+        target: $bahmni_enc_file_path
+
+volumes:
+  maadi_bahmni_backup:
+  maadi_mysql_data:
+  maadi_pgsql_data:
+  maadi_openmrs_lucene:
+  maadi_bahmni_home:
+
