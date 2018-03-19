@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+
+  maadi:
+    build:
+      context: bahmni
+      dockerfile: Dockerfile
+      args:
+        - impl_file_suffix=maadi
+
