@@ -4,12 +4,12 @@ services:
 
   maadi:
     image: localhost:5000/maadi:0.1
-    hostname: maadi-emr-a
-    container_name: maadi-emr-a
+    hostname: ${hostname}
+    container_name: ${hostname}-container
     tmpfs: /tmp
     env_file:
       - .env
-    command: "bash -e /start.sh $mode $setup_replication"
+    command: "bash -e /start.sh ${mode} ${setup_replication}"
     restart: always
     ports:
       - "80:80"
@@ -33,8 +33,8 @@ services:
         source: maadi_bahmni_home
         target: /home/bahmni
       - type: bind
-        source: $bahmni_enc_file_path
-        target: $bahmni_enc_file_path
+        source: ${bahmni_enc_file_path}
+        target: ${bahmni_enc_file_path}
 
 volumes:
   maadi_bahmni_backup:
