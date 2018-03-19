@@ -40,6 +40,8 @@ ssh -N -R 5000:localhost:5000 maadi-emr-a
 
 Pull the image, bring up the container and watch the logs:
 ```
+docker-compose down
+docker-compose pull
 docker-compose up -d
 docker-compose logs -f
 ```
