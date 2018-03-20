@@ -9,6 +9,8 @@ services:
     tmpfs: /tmp
     env_file:
       - .env
+    environment:
+      - BAHMNI_SERVER_MODE=$mode
     command: "bash -e /start.sh ${mode} ${setup_replication}"
     restart: always
     ports:
