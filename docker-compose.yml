@@ -7,12 +7,11 @@ services:
     hostname: ${hostname}
     container_name: ${hostname}-container
     tmpfs: /tmp
-    env_file:
-      - .env
     environment:
       - BAHMNI_SERVER_MODE=$mode
       - BAHMNI_ACTIVE_HOST=$bahmni_active_host
       - BAHMNI_PASSIVE_HOST=$bahmni_passive_host
+      - BAHMNI_ENC_FILE_PATH=$bahmni_enc_file_path
     command: "bash -e /start.sh ${mode} ${setup_replication}"
     restart: always
     ports:
