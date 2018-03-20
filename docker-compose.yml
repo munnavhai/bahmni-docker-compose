@@ -9,6 +9,7 @@ services:
     tmpfs: /tmp
     environment:
       - BAHMNI_SERVER_MODE=$mode
+      - BAHMNI_SETUP_REPLICATION=$setup_replication
       - BAHMNI_ACTIVE_HOST=$bahmni_active_host
       - BAHMNI_PASSIVE_HOST=$bahmni_passive_host
       - BAHMNI_ENC_FILE_PATH=$bahmni_enc_file_path
