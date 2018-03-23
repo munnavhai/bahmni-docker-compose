@@ -20,8 +20,9 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "3306:3306" # Mysql repl
-      - "5432:5432" # PostgreSQL repl
+      - "2222:22"   # SSH for syncing backups
+      - "3306:3306" # Mysql replication
+      - "5432:5432" # PostgreSQL replication
     volumes:
       - type: volume
         source: maadi_bahmni_backup
