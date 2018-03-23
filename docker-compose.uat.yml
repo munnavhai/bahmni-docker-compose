@@ -1,0 +1,26 @@
+version: "3.3"
+
+services:
+
+  maadi-uat:
+    image: localhost:5000/maadi:0.1
+    hostname: ${hostname}-uat
+    container_name: ${hostname}-uat-container
+    tmpfs: /tmp
+    environment:
+      - BAHMNI_SERVER_MODE=active
+      - BAHMNI_SETUP_REPLICATION=no
+      - BAHMNI_ACTIVE_HOST=localhost
+      - BAHMNI_PASSIVE_HOST=
+      - BAHMNI_ENC_FILE_PATH=$bahmni_enc_file_path
+      - BAHMNI_BACKUP_PASSIVE=no
+      - BAHMNI_BACKUP_NESTOR=no
+    command: "bash -e /start.sh active no"
+    restart: always
+    ports:
+      - "10080:80"
+      - "10443:443"
+    volumes:
+      - type: bind
+        source: ${bahmni_enc_file_path}
+        target: ${bahmni_enc_file_path}
