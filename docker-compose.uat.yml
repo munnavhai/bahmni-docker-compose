@@ -24,3 +24,4 @@ services:
       - type: bind
         source: ${bahmni_enc_file_path}
         target: ${bahmni_enc_file_path}
+
