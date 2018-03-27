@@ -21,7 +21,17 @@ services:
       - "10080:80"
       - "10443:443"
     volumes:
+      - type: volume
+        source: maadi_mysql_data
+        target: /var/lib/mysql
+      - type: volume
+        source: maadi_pgsql_data
+        target: /var/lib/pgsql
       - type: bind
         source: ${bahmni_enc_file_path}
         target: ${bahmni_enc_file_path}
+
+volumes:
+  maadi_mysql_data:
+  maadi_pgsql_data:
 
