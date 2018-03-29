@@ -15,6 +15,7 @@ services:
       - BAHMNI_ENC_FILE_PATH=$bahmni_enc_file_path
       - BAHMNI_BACKUP_PASSIVE=$bahmni_backup_passive
       - BAHMNI_BACKUP_NESTOR=$bahmni_backup_nestor
+      - BAHMNI_NESTOR_BACKUP_DIR=$nestor_backup_dir
     command: "bash -e /start.sh ${mode} ${setup_replication}"
     restart: always
     ports:
