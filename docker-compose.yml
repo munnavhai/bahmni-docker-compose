@@ -2,8 +2,8 @@ version: '3.3'
 
 services:
 
-  maadi:
-    image: localhost:5000/maadi:0.1
+  chk:
+    image: localhost:5000/chk:0.1
     hostname: ${hostname}
     container_name: ${hostname}-container
     tmpfs: /tmp
@@ -26,28 +26,28 @@ services:
       - "5432:5432" # PostgreSQL replication
     volumes:
       - type: volume
-        source: maadi_bahmni_backup
+        source: chk_bahmni_backup
         target: /bahmni_backup/backups
       - type: volume
-        source: maadi_mysql_data
+        source: chk_mysql_data
         target: /var/lib/mysql
       - type: volume
-        source: maadi_pgsql_data
+        source: chk_pgsql_data
         target: /var/lib/pgsql
       - type: volume
-        source: maadi_openmrs_lucene
+        source: chk_openmrs_lucene
         target: /opt/openmrs/lucene
       - type: volume
-        source: maadi_bahmni_home
+        source: chk_bahmni_home
         target: /home/bahmni
       - type: bind
         source: ${bahmni_enc_file_path}
         target: ${bahmni_enc_file_path}
 
 volumes:
-  maadi_bahmni_backup:
-  maadi_mysql_data:
-  maadi_pgsql_data:
-  maadi_openmrs_lucene:
-  maadi_bahmni_home:
+  chk_bahmni_backup:
+  chk_mysql_data:
+  chk_pgsql_data:
+  chk_openmrs_lucene:
+  chk_bahmni_home:
 

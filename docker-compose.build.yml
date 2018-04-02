@@ -2,11 +2,10 @@ version: '3.3'
 
 services:
 
-  maadi:
-    image: localhost:5000/maadi:0.1
+  chk:
     build:
       context: bahmni
       dockerfile: Dockerfile
       args:
-        - impl_file_suffix=maadi
+        - impl_file_suffix=chk
 
