@@ -24,6 +24,9 @@ services:
       - "2222:22"   # SSH for syncing backups
       - "3306:3306" # Mysql replication
       - "5432:5432" # PostgreSQL replication
+      - "8050:8050" # OpenMRS atomfeed
+      - "8052:8052" # OpenELIS atomfeed
+
     volumes:
       - type: volume
         source: chk_bahmni_backup
