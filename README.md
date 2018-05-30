@@ -13,14 +13,14 @@ sudo setfacl -m "u:<username>:rwX" /opt/bahmni
 sudo setfacl -m "d:u:<username>:rwX" /opt/bahmni
 ```
 
-Clone the correct branch of this repo:
+Clone this repo:
 ```
-git clone -b <implementation-branch> https://github.com/MSF-OCB/bahmni-docker-compose/ /opt/bahmni
+git clone https://github.com/MSF-OCB/bahmni-docker-compose/ /opt/bahmni
 ```
 
 If you have trouble login in, you can also copy your (passphrase protected!!) ssh key to the server, add it to your github account and clone via ssh:
 ```
-git clone -b <implementation-branch> git@github.com:MSF-OCB/bahmni-docker-compose.git /opt/bahmni/
+git clone git@github.com:MSF-OCB/bahmni-docker-compose.git /opt/bahmni/
 ```
 
 And copy over the config file and edit it:
