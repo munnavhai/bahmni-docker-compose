@@ -2,8 +2,8 @@ version: '3.3'
 
 services:
 
-  chk:
-    image: localhost:5000/chk:0.1
+  bahmni:
+    image: localhost:5000/${image_name}:${image_version}
     hostname: ${hostname}
     container_name: ${hostname}-container
     tmpfs: /tmp
@@ -29,28 +29,28 @@ services:
 
     volumes:
       - type: volume
-        source: chk_bahmni_backup
+        source: bahmni_bahmni_backup
         target: /bahmni_backup/backups
       - type: volume
-        source: chk_mysql_data
+        source: bahmni_mysql_data
         target: /var/lib/mysql
       - type: volume
-        source: chk_pgsql_data
+        source: bahmni_pgsql_data
         target: /var/lib/pgsql
       - type: volume
-        source: chk_openmrs_lucene
+        source: bahmni_openmrs_lucene
         target: /opt/openmrs/lucene
       - type: volume
-        source: chk_bahmni_home
+        source: bahmni_bahmni_home
         target: /home/bahmni
       - type: bind
         source: ${bahmni_enc_file_path}
         target: ${bahmni_enc_file_path}
 
 volumes:
-  chk_bahmni_backup:
-  chk_mysql_data:
-  chk_pgsql_data:
-  chk_openmrs_lucene:
-  chk_bahmni_home:
+  bahmni_bahmni_backup:
+  bahmni_mysql_data:
+  bahmni_pgsql_data:
+  bahmni_openmrs_lucene:
+  bahmni_bahmni_home:
 

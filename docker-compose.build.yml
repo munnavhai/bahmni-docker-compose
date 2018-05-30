@@ -2,10 +2,10 @@ version: '3.3'
 
 services:
 
-  chk:
+  bahmni:
     build:
       context: bahmni
       dockerfile: Dockerfile
       args:
-        - impl_file_suffix=chk
+        - impl_file_suffix=${impl_file_suffix}
 
