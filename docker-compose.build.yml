@@ -9,4 +9,6 @@ services:
       args:
         - impl_file_suffix=${impl_file_suffix}
         - bahmni_installer_url=${bahmni_installer_url}
+        - bahmni_implementation_repo=${bahmni_implementation_repo}
+        - bahmni_implementation_branch=${bahmni_implementation_branch}
 
