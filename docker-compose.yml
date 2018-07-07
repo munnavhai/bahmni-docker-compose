@@ -47,7 +47,7 @@ services:
         source: bahmni_bahmni_home
         target: /home/bahmni
       - type: bind
-        source: ${bahmni_enc_file_path}
+        source: ${bahmni_enc_host_path}
         target: ${bahmni_enc_file_path}
 
 volumes:
