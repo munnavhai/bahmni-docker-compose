@@ -10,6 +10,8 @@ services:
     environment:
       - BAHMNI_SERVER_MODE=$mode
       - BAHMNI_SETUP_REPLICATION=$setup_replication
+      - BAHMNI_REPLICATION_USERNAME=$bahmni_replication_username
+      - BAHMNI_REPLICATION_PASSWORD=$bahmni_replication_password
       - BAHMNI_ACTIVE_HOST=$bahmni_active_host
       - BAHMNI_PASSIVE_HOST=$bahmni_passive_host
       - BAHMNI_ENC_FILE_PATH=$bahmni_enc_file_path
@@ -25,6 +27,7 @@ services:
       - "3306:3306" # Mysql replication
       - "5432:5432" # PostgreSQL replication
       - "8050:8050" # OpenMRS atomfeed
+      - "8051:8051" # OpenMRS atomfeed
       - "8052:8052" # OpenELIS atomfeed
 
     volumes:
