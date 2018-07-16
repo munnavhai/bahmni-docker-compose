@@ -22,8 +22,8 @@ services:
     command: "bash -e /start.sh active no"
     restart: always
     ports:
-      - "10080:80"
-      - "10443:443"
+      - "80:80"
+      - "443:443"
     volumes:
       - type: volume
         source: bahmni_uat_mysql_data
@@ -32,7 +32,7 @@ services:
         source: bahmni_uat_pgsql_data
         target: /var/lib/pgsql
       - type: bind
-        source: ${bahmni_enc_file_path}
+        source: ${bahmni_enc_host_path}
         target: ${bahmni_enc_file_path}
 
 volumes:

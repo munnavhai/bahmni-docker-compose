@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+
+  bahmni:
+    ports:
+      - "80:80"
+      - "443:443"
+      - "3306:3306" # Mysql replication
+      - "5432:5432" # PostgreSQL replication
+      - "8050:8050" # OpenMRS atomfeed
+      - "8051:8051" # OpenMRS atomfeed
+      - "8052:8052" # OpenELIS atomfeed
+

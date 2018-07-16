@@ -21,15 +21,6 @@ services:
       - BAHMNI_NESTOR_BACKUP_DIR=$nestor_backup_dir
     command: "bash -e /start.sh ${mode} ${setup_replication}"
     restart: always
-    ports:
-      - "80:80"
-      - "443:443"
-      - "2222:22"   # SSH for syncing backups
-      - "3306:3306" # Mysql replication
-      - "5432:5432" # PostgreSQL replication
-      - "8050:8050" # OpenMRS atomfeed
-      - "8051:8051" # OpenMRS atomfeed
-      - "8052:8052" # OpenELIS atomfeed
 
     volumes:
       - type: volume

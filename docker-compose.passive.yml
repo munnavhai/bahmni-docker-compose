@@ -1,0 +1,8 @@
+version: '3.3'
+
+services:
+
+  bahmni:
+    ports:
+      - "2222:22"   # SSH for syncing backups
+
