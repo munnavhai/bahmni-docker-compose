@@ -8,6 +8,7 @@ services:
     container_name: ${hostname}-container
     tmpfs: /tmp
     environment:
+      - BAHMNI_IMPL_NAME=${bahmni_implementation_name}
       - BAHMNI_SERVER_MODE=$mode
       - BAHMNI_SETUP_REPLICATION=$setup_replication
       - BAHMNI_POSTGRES_PRESENT=$bahmni_postgres_present
@@ -21,7 +22,6 @@ services:
       - BAHMNI_NESTOR_BACKUP_DIR=$nestor_backup_dir
     command: "bash -e /start.sh ${mode} ${setup_replication}"
     restart: always
-
     volumes:
       - type: volume
         source: bahmni_bahmni_backup

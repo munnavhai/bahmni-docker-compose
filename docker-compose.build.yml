@@ -7,7 +7,8 @@ services:
       context: bahmni
       dockerfile: Dockerfile
       args:
-        - BAHMNI_IMPL_FILE_SUFFIX=${impl_file_suffix}
+        - BAHMNI_IMPL_NAME=${bahmni_implementation_name}
+        - BAHMNI_TIMEZONE=${bahmni_timezone}
         - BAHMNI_INSTALLER_URL=${bahmni_installer_url}
         - BAHMNI_IMPLEMENTATION_REPO=${bahmni_implementation_repo}
         - BAHMNI_IMPLEMENTATION_BRANCH=${bahmni_implementation_branch}
