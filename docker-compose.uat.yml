@@ -3,7 +3,7 @@ version: "3.3"
 services:
 
   bahmni-uat:
-    image: localhost:5000/${image_name}:${image_version}
+    image: localhost:5000/${image_name}:${image_version_uat}
     hostname: ${hostname}-uat
     container_name: ${hostname}-uat-container
     tmpfs: /tmp
