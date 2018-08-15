@@ -8,6 +8,7 @@ services:
     container_name: ${hostname}-uat-container
     tmpfs: /tmp
     environment:
+      - BAHMNI_IMPL_NAME=${bahmni_implementation_name}
       - BAHMNI_SERVER_MODE=active
       - BAHMNI_SETUP_REPLICATION=no
       - BAHMNI_POSTGRES_PRESENT=$bahmni_postgres_present
