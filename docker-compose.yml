@@ -41,6 +41,10 @@ services:
       - type: bind
         source: ${bahmni_enc_host_path}
         target: ${bahmni_enc_file_path}
+      - type: bind
+        source: /etc/localtime
+        target: /etc/localtime
+        read_only: true
 
 volumes:
   bahmni_bahmni_backup:
