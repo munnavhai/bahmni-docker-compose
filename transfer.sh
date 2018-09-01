@@ -24,6 +24,9 @@ DONE=1
 while [ ${DONE} -ne 0 ]; do
   rsync --partial --delay-updates --progress --rsync-path="sudo rsync" -e "ssh -F $HOME/.ssh/config" ${ARCHIVE} ${DEST}:/opt/
   DONE=$?
+  if [ ${DONE} -ne 0 ]; do
+    sleep 30
+  fi
 done
 
 ssh-agent -k
