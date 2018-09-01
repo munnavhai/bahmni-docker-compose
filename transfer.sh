@@ -11,11 +11,16 @@ fi
 
 ARCHIVE=/tmp/${IMG}-${VERSION}.tar.7z
 
-docker save localhost:5000/${IMG}:${VERSION} | 7za a -t7z -m0=lzma2 -ms=on -mx=9 -si ${ARCHIVE}
+if [ ! -f "${ARCHIVE}" ]; then
+  docker save localhost:5000/${IMG}:${VERSION} | 7za a -t7z -m0=lzma2 -ms=on -mx=9 -si ${ARCHIVE}.tmp
 
-SAVE_RESULT=$?
-if [ ${SAVE_RESULT} -ne 0 ]; then
-  echo "Saving the docker image failed."
+  SAVE_RESULT=$?
+  if [ ${SAVE_RESULT} -ne 0 ]; then
+    echo "Saving the docker image failed."
+    exit 1
+  fi
+  
+  mv ${ARCHIVE}.tmp ${ARCHIVE}
 fi
 
 eval $(ssh-agent)
