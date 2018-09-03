@@ -33,9 +33,6 @@ services:
         source: bahmni_pgsql_data
         target: /var/lib/pgsql
       - type: volume
-        source: bahmni_openmrs_lucene
-        target: /opt/openmrs/lucene
-      - type: volume
         source: bahmni_bahmni_home
         target: /home/bahmni
       - type: bind
