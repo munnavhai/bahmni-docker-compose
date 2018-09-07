@@ -48,6 +48,5 @@ volumes:
   bahmni_bahmni_backup:
   bahmni_mysql_data:
   bahmni_pgsql_data:
-  bahmni_openmrs_lucene:
   bahmni_bahmni_home:
 
