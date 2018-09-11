@@ -23,8 +23,10 @@ services:
     command: "bash -e /start.sh active no"
     restart: always
     ports:
-      - "80:80"
-      - "443:443"
+      - target: 80
+        published: 80
+      - target: 443
+        published: 443
     volumes:
       - type: volume
         source: bahmni_uat_mysql_data
