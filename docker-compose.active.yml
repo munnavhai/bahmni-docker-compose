@@ -4,11 +4,18 @@ services:
 
   bahmni:
     ports:
-      - "80:80"
-      - "443:443"
-      - "3306:3306" # Mysql replication
-      - "5432:5432" # PostgreSQL replication
-      - "8050:8050" # OpenMRS atomfeed
-      - "8051:8051" # OpenMRS atomfeed
-      - "8052:8052" # OpenELIS atomfeed
+      - target: 80
+        published: 80
+      - target: 443
+        published: 443
+      - target: 3306
+        published: 3306 # Mysql replication
+      - target: 5432
+        published: 5432 # PostgreSQL replication
+      - target: 8050
+        published: 8050 # OpenMRS atomfeed
+      - target: 8051
+        published: 8051 # OpenMRS atomfeed
+      - target: 8052
+        published: 8052 # OpenELIS atomfeed
 
