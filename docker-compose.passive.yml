@@ -4,5 +4,6 @@ services:
 
   bahmni:
     ports:
-      - "2222:22"   # SSH for syncing backups
+      - target: 22
+        published: 2222   # SSH for syncing backups
 
