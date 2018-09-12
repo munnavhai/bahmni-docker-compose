@@ -27,6 +27,12 @@ services:
         published: 80
       - target: 443
         published: 443
+      - target: 8050
+        published: 8050
+      - target: 8051
+        published: 8051
+      - target: 8052
+        published: 8052
     volumes:
       - type: volume
         source: bahmni_uat_mysql_data
@@ -37,6 +43,7 @@ services:
       - type: bind
         source: ${bahmni_enc_host_path}
         target: ${bahmni_enc_file_path}
+        read_only: true
       - type: bind
         source: /etc/localtime
         target: /etc/localtime
