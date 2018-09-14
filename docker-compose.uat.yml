@@ -20,7 +20,7 @@ services:
       - BAHMNI_BACKUP_PASSIVE=no
       - BAHMNI_BACKUP_NESTOR=no
       - BAHMNI_NESTOR_BACKUP_DIR=$nestor_backup_dir
-    command: "bash -e /start.sh active no"
+    command: ["/start.sh", "active", "no"]
     restart: always
     ports:
       - target: 80
