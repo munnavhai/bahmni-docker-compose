@@ -17,6 +17,9 @@ if [ ! -f "${ARCHIVE}" ]; then
   SAVE_RESULT=$?
   if [ ${SAVE_RESULT} -ne 0 ]; then
     echo "Saving the docker image failed."
+    if [ -f ${ARCHIVE}.tmp ]; then
+      rm -f ${ARCHIVE}.tmp
+    fi
     exit 1
   fi
   
@@ -36,5 +39,11 @@ done
 
 ssh-agent -k
 
-rm -f ${ARCHIVE}
+echo "Delete the transferred image from /tmp ?"
+select DELETE in "Yes" "No"; do
+  case ${DELETE} in
+    Yes ) rm -rf ${ARCHIVE}; break;;
+    No  ) break;;
+  esac
+done
 
