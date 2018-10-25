@@ -12,10 +12,4 @@ services:
         published: 3306 # Mysql replication
       - target: 5432
         published: 5432 # PostgreSQL replication
-      - target: 8050
-        published: 8050 # OpenMRS service port
-      - target: 8051
-        published: 8051 # Bahmni reports service port
-      - target: 8052
-        published: 8052 # OpenELIS service port
 
