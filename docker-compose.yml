@@ -4,8 +4,8 @@ services:
 
   bahmni:
     image: localhost:5000/${image_name}:${image_version}
-    hostname: ${hostname}
-    container_name: ${hostname}-container
+    hostname: ${bahmni_implementation_name}-${mode}
+    container_name: ${bahmni_implementation_name}-${mode}-container
     tmpfs: /tmp
     environment:
       - BAHMNI_IMPL_NAME=${bahmni_implementation_name}

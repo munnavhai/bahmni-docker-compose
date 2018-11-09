@@ -4,8 +4,8 @@ services:
 
   bahmni-uat:
     image: localhost:5000/${image_name}:${image_version_uat}
-    hostname: ${hostname}-uat
-    container_name: ${hostname}-uat-container
+    hostname: ${bahmni_implementation_name}-uat
+    container_name: ${bahmni_implementation_name}-uat-container
     tmpfs: /tmp
     environment:
       - BAHMNI_IMPL_NAME=${bahmni_implementation_name}
