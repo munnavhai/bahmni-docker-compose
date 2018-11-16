@@ -12,5 +12,6 @@ services:
         - BAHMNI_INSTALLER_URL=${bahmni_installer_url}
         - BAHMNI_IMPLEMENTATION_REPO=${bahmni_implementation_repo}
         - BAHMNI_IMPLEMENTATION_BRANCH=${bahmni_implementation_branch}
-        - BAHMNI_POSTGRES_PRESENT=$bahmni_postgres_present
+        - BAHMNI_OPENELIS_ENABLED=$bahmni_openelis_enabled
+        - BAHMNI_REPORTS_ENABLED=$bahmni_reports_enabled
 

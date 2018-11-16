@@ -11,7 +11,8 @@ services:
       - BAHMNI_IMPL_NAME=${bahmni_implementation_name}
       - BAHMNI_SERVER_MODE=$mode
       - BAHMNI_SETUP_REPLICATION=$setup_replication
-      - BAHMNI_POSTGRES_PRESENT=$bahmni_postgres_present
+      - BAHMNI_OPENELIS_ENABLED=$bahmni_openelis_enabled
+      - BAHMNI_REPORTS_ENABLED=$bahmni_reports_enabled
       - BAHMNI_REPLICATION_USERNAME=$bahmni_replication_username
       - BAHMNI_REPLICATION_PASSWORD=$bahmni_replication_password
       - BAHMNI_ACTIVE_HOST=$bahmni_active_host
