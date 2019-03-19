@@ -9,7 +9,8 @@ if [ -z "${IMG}" ] || [ -z "${VERSION}" ] || [ -z "${DEST}" ]; then
   exit 1
 fi
 
-ARCHIVE=/tmp/${IMG}-${VERSION}.tar.7z
+ARCHIVE_NAME=${IMG}-${VERSION}.tar.7z
+ARCHIVE=/tmp/${ARCHIVE_NAME}
 
 if [ ! -f "${ARCHIVE}" ]; then
   docker save localhost:5000/${IMG}:${VERSION} | 7za a -t7z -m0=lzma2 -ms=on -mx=9 -si ${ARCHIVE}.tmp
@@ -48,4 +49,4 @@ select DELETE in "Yes" "No"; do
 done
 
 echo "Now run the following command on the receiving end:"
-echo "  7za x -so <img name>-<version>.tar.7z | docker load"
+echo "  7za x -so /opt/${ARCHIVE_NAME} | docker load"
