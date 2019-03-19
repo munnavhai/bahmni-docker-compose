@@ -47,3 +47,5 @@ select DELETE in "Yes" "No"; do
   esac
 done
 
+echo "Now run the following command on the receiving end:"
+echo "  7za x -so <img name>-<version>.tar.7z | docker load"
