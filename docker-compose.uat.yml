@@ -18,6 +18,7 @@ services:
       - BAHMNI_ACTIVE_HOST=localhost
       - BAHMNI_PASSIVE_HOST=
       - BAHMNI_ENC_FILE_PATH=$bahmni_enc_file_path
+      - BAHMNI_SKIP_BACKUPS=yes
       - BAHMNI_BACKUP_PASSIVE=no
       - BAHMNI_BACKUP_NESTOR=no
       - BAHMNI_NESTOR_BACKUP_DIR=$nestor_backup_dir

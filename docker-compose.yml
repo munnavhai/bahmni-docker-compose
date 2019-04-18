@@ -18,6 +18,7 @@ services:
       - BAHMNI_ACTIVE_HOST=$bahmni_active_host
       - BAHMNI_PASSIVE_HOST=$bahmni_passive_host
       - BAHMNI_ENC_FILE_PATH=$bahmni_enc_file_path
+      - BAHMNI_SKIP_BACKUPS=$bahmni_skip_backups
       - BAHMNI_BACKUP_PASSIVE=$bahmni_backup_passive
       - BAHMNI_BACKUP_NESTOR=$bahmni_backup_nestor
       - BAHMNI_NESTOR_HOST=$nestor_host
