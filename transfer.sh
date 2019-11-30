@@ -10,7 +10,7 @@ if [ -z "${IMG}" ] || [ -z "${VERSION}" ] || [ -z "${DEST}" ]; then
 fi
 
 ARCHIVE_NAME=${IMG}-${VERSION}.tar.7z
-ARCHIVE=/tmp/${ARCHIVE_NAME}
+ARCHIVE=/opt/${ARCHIVE_NAME}
 
 if [ ! -f "${ARCHIVE}" ]; then
   docker save localhost:5000/${IMG}:${VERSION} | 7za a -t7z -m0=lzma2 -ms=on -mx=9 -si ${ARCHIVE}.tmp
