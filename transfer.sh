@@ -3,14 +3,18 @@
 IMG=$1
 VERSION=$2
 DEST=$3
+KEY=$4
 
-if [ -z "${IMG}" ] || [ -z "${VERSION}" ] || [ -z "${DEST}" ]; then
-  echo "usage: transfer.sh <image> <version> <host>"
+if [ -z "${IMG}" ] || [ -z "${VERSION}" ] || [ -z "${DEST}" ] || [ -z "${KEY}" ]; then
+  echo "usage: transfer.sh <image> <version> <host> <private_key>"
   exit 1
 fi
 
 ARCHIVE_NAME=${IMG}-${VERSION}.tar.7z
 ARCHIVE=/opt/${ARCHIVE_NAME}
+
+eval $(ssh-agent)
+ssh-add "${KEY}"
 
 if [ ! -f "${ARCHIVE}" ]; then
   docker save localhost:5000/${IMG}:${VERSION} | 7za a -t7z -m0=lzma2 -ms=on -mx=9 -si ${ARCHIVE}.tmp
@@ -26,8 +30,6 @@ if [ ! -f "${ARCHIVE}" ]; then
   
   mv ${ARCHIVE}.tmp ${ARCHIVE}
 fi
-
-eval $(ssh-agent)
 
 DONE=1
 while [ ${DONE} -ne 0 ]; do
