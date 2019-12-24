@@ -42,6 +42,9 @@ done
 
 ssh-agent -k
 
+echo "Now run the following command on the receiving end:"
+echo "  7za x -so /opt/${ARCHIVE_NAME} | docker load"
+echo -e "\n"
 echo "Delete the transferred image from /tmp ?"
 select DELETE in "Yes" "No"; do
   case ${DELETE} in
@@ -50,5 +53,3 @@ select DELETE in "Yes" "No"; do
   esac
 done
 
-echo "Now run the following command on the receiving end:"
-echo "  7za x -so /opt/${ARCHIVE_NAME} | docker load"
