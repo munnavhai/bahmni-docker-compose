@@ -14,4 +14,9 @@ services:
         - BAHMNI_IMPLEMENTATION_BRANCH=${bahmni_implementation_branch}
         - BAHMNI_OPENELIS_ENABLED=$bahmni_openelis_enabled
         - BAHMNI_REPORTS_ENABLED=$bahmni_reports_enabled
-
+        - BAHMNI_OPENMRS_USERNAME=${bahmni_openmrs_username}
+        - BAHMNI_OPENMRS_PASSWORD=${bahmni_openmrs_password}
+        - BAHMNI_OPENELIS_USERNAME=${bahmni_openelis_username}
+        - BAHMNI_OPENELIS_PASSWORD=${bahmni_openelis_password}
+        - BAHMNI_REPORTS_USERNAME=${bahmni_reports_username}
+        - BAHMNI_REPORTS_PASSWORD=${bahmni_reports_password}
